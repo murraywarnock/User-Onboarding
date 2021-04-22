@@ -72,7 +72,6 @@ describe("User Onboarding App", () => {
 
       termsInput()
         .should("not.be.checked")
-        // .should("have.value", false && "no")
         .check()
         .should("be.checked")
 
@@ -80,6 +79,28 @@ describe("User Onboarding App", () => {
         .should("be.enabled")
 
     
+    });    it("user cannot submit with empty name input", () => {
+      submitBtn()
+        .should("not.be.enabled")
+
+      nameInput()
+        .should("have.value", "")
+    
+      emailInput()
+        .should("have.value", "")
+        .type("account@server.xxx")
+
+      pwdInput()
+        .should("have.value", "")
+        .type("Thisis1v@lid")
+
+      termsInput()
+        .should("not.be.checked")
+        .check()
+        .should("be.checked")
+
+        submitBtn()
+        .should("not.be.enabled")    
     });
 
 }); 
