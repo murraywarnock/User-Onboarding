@@ -21,7 +21,7 @@ export default function Form(props) {
         <h2>Board a User On</h2>
 
         {/* 🔥 DISABLE THE BUTTON */}
-        <button disabled={disabled}>SUBMIT</button>
+        <button id="submit" disabled={disabled}>SUBMIT</button>
 
         <div className="errors">
           {/* 🔥 RENDER THE VALIDATION ERRORS HERE */}
